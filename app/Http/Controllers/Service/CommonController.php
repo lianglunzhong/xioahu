@@ -21,7 +21,7 @@ class CommonController extends Controller
             return $result;
         }
 
-        $answer_id = $request->get('answer_id');
+        $answer_id = $request->get('id');
         $vote = $request->get('vote');
         if((!$answer_id) || (!$vote)) {
             $result['status'] = 0;
@@ -68,6 +68,7 @@ class CommonController extends Controller
             ->get();
 
         $answers =  Answer::orderBy('created_at', 'desc')
+            ->with('customers')
             ->with('customer')
             ->limit($limit)
             ->skip($skip)
@@ -84,7 +85,7 @@ class CommonController extends Controller
 
         $result['status'] = 1;
         $result['data'] = $data;
-        
+
         return response()->json($result);
     }
 }

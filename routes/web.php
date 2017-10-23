@@ -73,3 +73,22 @@ Route::group(['prefix' => 'service'], function() {
     //删除评论
     // Route::any('/remove', 'Service\CommentController@remove');
 });
+// Auth::routes();
+
+// Route::get('/home', 'HomeController@index')->name('home');
+/**
+ * 页面路由，即angular里面定义的路由需要跳转的模板
+ */
+Route::get('page/home', function() {
+    return view('page.home');
+});
+Route::get('page/login', function() {
+    return view('page.login');
+});
+Route::get('page/signup', function() {
+    return view('page.signup');
+});
+Route::get('question/add', function() {
+    return view('question.add');
+});
+

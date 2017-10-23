@@ -112,7 +112,10 @@ class AnswerController extends Controller
 
         //查看单个问题
         if($id) {
-            $answer = Answer::find($id);
+            $answer = Answer::
+                with('customer')
+                ->with('customers')
+                ->find($id);
             if($answer) {
                 $result['status'] = 1;
                 $result['data'] = $answer;

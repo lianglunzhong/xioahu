@@ -90,3 +90,21 @@
 .comment-block {
 	display: none;
 }
+.vote {
+	display: inline-block;
+	*display: inline;
+	width: 10%;
+	vertical-align: top;
+}
+.vote .up {
+	color: red;
+	cursor: pointer;
+}
+.vote .down {
+	cursor: pointer;
+}
+.item-content {
+	display: inline-block;
+	*display: inline;
+	width: 80%;
+}
