@@ -1,6 +1,6 @@
 var xiaohu = angular.module('xiaohu', ['ui.router']);
 
-xiaohu.config(['$interpolateProvider', '$stateProvider', '$urlRouterProvider', function($interpolateProvider, $stateProvider, $urlRouterProvider) {
+xiaohu.config(['$interpolateProvider', '$stateProvider', '$urlRouterProvider', '$locationProvider', function($interpolateProvider, $stateProvider, $urlRouterProvider, $locationProvider) {
     // $interpolateProvider.startSymbol('[:');
     // $interpolateProvider.endSymbol(':]');
 
@@ -28,6 +28,8 @@ xiaohu.config(['$interpolateProvider', '$stateProvider', '$urlRouterProvider', f
     	url: '/add',
     	templateUrl: 'question/add'
     })
+
+    $locationProvider.html5Mode(true);
 }]);
 
 xiaohu.controller('testController', ['$scope', function($scope) {

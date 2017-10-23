@@ -4,6 +4,7 @@
 	<title>xiaohu</title>
 	<meta charset="utf-8">
 	<meta name="csrf-token" content="{{ csrf_token() }}">
+	<base href="/">
 	<link href="">
 	<!-- <link rel="stylesheet" type="text/css" href="https://necolas.github.io/normalize.css/5.0.0/normalize.css"> -->
 	<link rel="stylesheet" type="text/css" href="/css/base.css">

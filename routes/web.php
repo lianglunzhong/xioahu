@@ -92,3 +92,12 @@ Route::get('question/add', function() {
     return view('question.add');
 });
 
+// Route::get('/views/{name}', function($name) {
+//     return View($name);
+// });
+Route::any('{path?}', function () {
+    return View('index');
+})->where("path", ".+");
+
+
+
