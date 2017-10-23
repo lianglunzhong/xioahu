@@ -79,9 +79,9 @@ Route::group(['prefix' => 'service'], function() {
 /**
  * 页面路由，即angular里面定义的路由需要跳转的模板
  */
-Route::get('page/home', function() {
-    return view('page.home');
-});
+// Route::get('page/home', function() {
+//     return view('page.home');
+// });
 Route::get('page/login', function() {
     return view('page.login');
 });
@@ -92,12 +92,23 @@ Route::get('question/add', function() {
     return view('question.add');
 });
 
-// Route::get('/views/{name}', function($name) {
-//     return View($name);
-// });
+/**
+ * 任何以/views/的路由都返回后面的参数所在的视图
+ * 因为在angular定义的路由中的templateurl需要后台服务器先定义好
+ * 此处批量定义，规定了js中的路由形式
+ * 即：templateUrl: 'views/page.home'
+ */
+Route::get('/views/{name}', function($name) {
+    return view($name);
+});
+
+/**
+ * 前端angular的路由去掉#号之后，当前路由在后台怕匹配不到对应的路由时，
+ * 则加载前端ui-view所在的首页
+ */
 Route::any('{path?}', function () {
-    return View('index');
-})->where("path", ".+");
+    return view('index');
+})->where("path", ".+"); // .：用于匹配除换行符之外的所有字符; +： 表示1到多个
 
 
 

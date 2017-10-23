@@ -9,11 +9,11 @@ xiaohu.config(['$interpolateProvider', '$stateProvider', '$urlRouterProvider', '
     $stateProvider
     .state('home', {
     	url: '/home',
-    	templateUrl: 'page/home'
+    	templateUrl: 'views/page.home'  //后台统一形式的路由写法
     })
     .state('login', {
     	url: '/login',
-    	templateUrl: 'page/login'
+    	templateUrl: 'page/login'  //后台单独定义的路由写法
     })
     .state('signup', {
     	url: '/signup',
